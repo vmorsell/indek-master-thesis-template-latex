@@ -1,0 +1,57 @@
+\newcommand{\maketitlepage}[5]{%
+    {%
+        \newpage
+        \pagestyle{empty}
+        \newgeometry{
+            left=20mm,
+            top=80.5mm,
+            right=20mm,
+            bottom=30.5mm
+        }
+    
+        {%
+            \selectlanguage{#1}
+            \sffamily
+            
+            {
+                \centering
+                {%
+                    \fontsize{24pt}{24pt}\selectfont%
+                    #2\par
+                }
+
+                {%
+                    \fontsize{20pt}{20pt}\selectfont%
+                    
+                    \vspace{22pt}
+                    \iflanguage{english}{by}{av}
+                    \vspace{22pt}
+                
+                    #3 \\
+                    \vspace{6pt}
+                    #4
+                    \par
+                }
+                
+                \vspace*{\fill}
+        
+                {%
+                    \fontsize{12pt}{13pt}\selectfont%
+                    \iflanguage{english}{%
+                        Master of Science Thesis TRITA-#5\\
+                        KTH Industrial Engineering and Management\\
+                        Industrial Economics and Management\\
+                    }{%
+                        Examensarbete TRITA-#5\\
+                        KTH Industriell teknik och management\\
+                        Industriell ekonomi och organisation\\
+                    }
+                    SE-100 44 STOCKHOLM\par
+                }
+            }
+        }
+        
+        \clearpage
+        \restoregeometry
+    }
+}

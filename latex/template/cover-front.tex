@@ -1,0 +1,82 @@
+% Set up header and footer
+\definecolor{coverpageblue}{HTML}{1954A6}
+\fancypagestyle{coverpage}{
+    \fancyhf{} % Clear the header/footer
+
+    \newcommand{\coverpagelogosize}{26.5mm}%{31.611mm}
+    \newcommand{\coverpagewordmarkwidth}{37.37mm}
+
+    % Header with KTH logotype and wordmark
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyheadoffset[L]{11.9mm}
+    \fancyhead[L]{%
+        \raisebox{\dimexpr \ht\strutbox-\height+4mm}{%
+            \includegraphics[width=26.5mm]{template/img/kth-logo.png}%
+        }
+    }
+    \fancyheadoffset[R]{11.9mm}
+    \fancyhead[R]{\includegraphics[width=37.37mm]{template/img/kth-name-text.png}}
+
+    % Footer with blue line, city, country and year
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyfoot[L]{%
+        \vspace*{-13mm}
+        \hspace*{-12mm}\color{coverpageblue}\rule{\dimexpr\paperwidth-27mm\relax}{1pt}%
+    }
+}
+
+\newcommand{\makecoverfront}[8]{%
+    {%
+        \newpage
+        \thispagestyle{coverpage}
+        \newgeometry{
+            top=11.6mm,
+            left=25.3mm,
+            right=25mm,
+            bottom=13.8mm,
+            headsep=43.5mm,
+            includehead
+        }
+    
+        \selectlanguage{#1}
+        \sffamily
+    
+        {%
+            \fontsize{12pt}{19pt}\selectfont
+            \noindent\textit{#2}\par
+            \noindent\textit{#3}\par
+        }
+    
+        \vspace{36pt}
+    
+        {%
+            \fontsize{26pt}{26pt}\selectfont
+            \RaggedRight\textbf{#4}\par
+        }
+    
+        \vspace{11pt}
+    
+        {%
+            \fontsize{16pt}{16pt}\selectfont
+            \RaggedRight#5\par
+        }
+    
+        \vspace{1pt}
+    
+        {%
+            \fontsize{12pt}{35pt}\selectfont
+            \noindent\textbf{\MakeUppercase{#6}}\par
+            \noindent\textbf{\MakeUppercase{#7}}\par
+        }
+
+        \vspace{\fill}
+
+        {%
+            \hspace*{-18mm}\sffamily\fontsize{8pt}{10pt}\selectfont%
+            Stockholm, \iflanguage{english}{Sweden}{Sverige} #8
+        }
+        
+        \clearpage
+        \restoregeometry
+    }
+}

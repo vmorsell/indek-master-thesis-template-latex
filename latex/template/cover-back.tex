@@ -1,0 +1,36 @@
+% Header and footer
+\definecolor{coverpageblue}{HTML}{1954A6}
+\fancypagestyle{backcoverpage}{
+    \fancyhf{} % Clear header & footer
+    
+    % Footer with KTH's website url
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyfoot[L]{%
+        \vspace*{-2.5mm}%
+        {%
+            \hspace*{-11.6mm}\color{coverpageblue}\sffamily\fontsize{8pt}{10pt}\selectfont%
+            www.kth.se
+        }
+        \hspace*{-12mm}\color{coverpageblue}\rule{\dimexpr\paperwidth-28mm\relax}{1pt}%
+    }
+}
+
+\newcommand{\makebackcoverpage}[1]{%
+    {%
+        \newgeometry{
+            left=28.5mm,
+            bottom=24mm,
+        }
+        
+        \thispagestyle{backcoverpage}
+        \sffamily
+        
+        \vspace*{\fill}
+        
+        \noindent\hspace*{-11.6mm}\fontsize{10pt}{10pt}\selectfont%
+        TRITA-#1
+        
+        \clearpage
+        \restoregeometry
+    }
+}

@@ -1,0 +1,96 @@
+\newcommand{\makeabstractpage}[2]{
+    {%
+        \newpage
+        \pagestyle{empty}
+        \newgeometry{
+            top=15mm,
+            left=25mm,
+            right=25mm,
+            bottom=30mm
+        }
+        
+        {%
+            \selectlanguage{#1}
+            
+            #2
+        }
+        
+        \clearpage
+        \restoregeometry
+    }
+}
+
+\newcommand{\makeabstractheader}[9]{
+    {%
+        \renewcommand{\familydefault}{\sffamily}
+        \noindent\begin{tabular}{| p{0.22\textwidth} p{0.06\textwidth} p{0.3\textwidth} | p{0.36\textwidth} |}
+        \hline
+        \vspace*{-4pt}\multirow{5}{*}{%
+            \vspace*{10pt}\iflanguage{english}{%
+                \includegraphics[width=31.611mm]{template/img/kth-itm-logo-en.jpg}
+            }{%
+                \includegraphics[width=31.611mm]{template/img/kth-itm-logo-sv.jpg}
+            }
+            
+        }
+        &
+        & \multicolumn{2}{C{0.68\textwidth}|}{%
+            \sffamily\textbf{%
+                \iflanguage{english}{Master of Science Thesis}{Examensarbete} TRITA-#1
+            }
+        }
+        \\
+        &
+        &
+        \multicolumn{2}{l|}{}
+        \\
+        &
+        & \multicolumn{2}{C{0.68\textwidth}|}{%
+            \sffamily\textbf{#2}
+        }
+        \\
+        &
+        & \multicolumn{2}{l|}{}
+        \\
+        &
+        & \multicolumn{2}{C{0.68\textwidth}|}{\sffamily#3}
+        \\
+        &
+        & \multicolumn{2}{C{0.68\textwidth}|}{\sffamily#4}
+        \\
+        \hline
+        {%
+            \sffamily\fontsize{7pt}{7pt}\selectfont%
+            \iflanguage{english}{Approved}{Godkänd}
+        }
+        &
+        \multicolumn{2}{|l|}{%
+            \sffamily\fontsize{7pt}{7pt}\selectfont%
+            \iflanguage{english}{Examiner}{Examinator}
+        }
+        &
+        {%
+            \sffamily\fontsize{7pt}{7pt}\selectfont%
+            \iflanguage{english}{Supervisor}{Handledare}
+        } \\
+        \sffamily#5 &
+        \multicolumn{2}{|p{0.33\textwidth}|}{\sffamily#6} &
+        \sffamily#7 \\
+            
+        \hline
+        &
+        \multicolumn{2}{|l|}{%
+            \sffamily\fontsize{7pt}{7pt}\selectfont%
+            \iflanguage{english}{Commissioner}{Uppdragsgivare}
+        } &
+        {%
+            \sffamily\fontsize{7pt}{7pt}\selectfont%
+            \iflanguage{english}{Contact Person}{Kontaktperson}
+        } \\
+        &
+        \multicolumn{2}{|p{0.33\textwidth}|}{\sffamily#8} &
+        \sffamily#9 \\
+        \hline
+        \end{tabular}
+    }
+}

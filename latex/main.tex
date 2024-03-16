@@ -1,0 +1,59 @@
+\documentclass[12pt,twoside,openany]{book}
+
+% Apply template settings. Unless you want to edit the template
+% to match your needs, you don't want to mess with this file.
+\input{template/preamble}
+
+\begin{document}
+\raggedbottom
+
+% Change this to reflect your thesis language
+% Valid values: english or swedish
+\selectlanguage{english}
+
+% Remove or comment out this line to get rid of the README
+\include{template/readme}
+
+% Enumerate the front matter with Roman numbers
+\pagenumbering{roman}
+
+% Add cover page, blank page, title pages, abstracts, dedication,
+% acknowledgements, preface, contents, list of figures and
+% list of tables.
+% Comment out, or add pages, as per your preference
+\include{content/0.1-cover-front}
+\include{content/0.2-blank-page}
+\include{content/0.3-title-pages}
+\include{content/0.4-abstracts}
+\include{content/0.5-dedication}
+\include{content/0.6-acknowledgements}
+\include{content/0.7-contents}
+
+\listoffigures
+\clearpage
+\listoftables
+
+\include{content/0.8-preface}
+
+% Enumerate the body with Arabic numbers
+\cleardoublepage
+
+% Start on a right side page to not mess up the alternate left/right
+% header alignment pattern
+\pagenumbering{arabic}
+
+% Now it's time to include the actual content of the thesis
+% List all the files from content/ you want to include
+\include{content/1-introduction}
+\include{content/2-literature-review}
+\include{content/3-method}
+\include{content/4-results}
+\include{content/5-discussion}
+\include{content/6-conclusions}
+
+% Finish up
+\include{content/99.1-references}
+\include{content/99.2-appendices}
+\include{content/99.3-cover-back}
+
+\end{document}

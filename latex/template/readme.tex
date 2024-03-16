@@ -1,0 +1,56 @@
+\newgeometry{
+    top=20mm,
+    left=25mm,
+    right=40mm,
+    bottom=20mm
+}
+    
+\section*{README}
+\thispagestyle{empty}
+
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+{%
+    \fontsize{12pt}{15pt}\selectfont
+    This template is designed for master's theses at the INDEK department of KTH Royal Institute of Technology. It was created in January 2024 by Viktor Mörsell\footnote{<\email{viktor@upper.st}; \email{morsell@kth.se}>.}, based on the excellent ICT thesis template by Hannes Rabo\footnote{<\email{hannes.rabo@gmail.com}; \email{hrabo@kth.se}>.}. If you encounter any issues, please feel free to reach out. The template is made available on GitHub\footnote{\url{https://github.com/vmorsell/indek-master-thesis-template-latex}} "as is" and strives to adhere to:
+    
+    \begin{itemize}
+        \item INDEK Thesis Instructions v6\footnote{\url{https://www.kth.se/polopoly_fs/1.1172225.1662124048!/X-jobbsrapport\%20-\%20INSTRUKTION\%20f\%C3\%A4rdigst\%C3\%A4llande\%20v6.pdf}}
+        \item INDEK First Pages Example v4\footnote{\url{https://www.kth.se/polopoly_fs/1.1172231.1662124088!/X-jobbsrapport\%20CINEK\%20-\%20EXEMPEL\%20F\%C3\%B6rsta\%20sidorna\%20v4.pdf}}
+        \item Selected aspects of KTH's General Rules for Covers and Inlays\footnote{\url{https://www.kth.se/polopoly_fs/1.487233.1584470685!/Tips_utformning_avhandling.pdf}}
+        \item The IEEE Journals Reference Format\footnote{\url{http://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf}}
+    \end{itemize}
+
+    \noindent The sample content provided aims to demonstrate formatting styles and layout options. Ensure you customize the structure to suit your research needs and follow your supervisor's guidelines.
+
+    \subsection*{Getting started}
+
+    \begin{enumerate}
+        \item Choose the language for your thesis in \texttt{main.tex}
+        \item Modify the thesis structure in \texttt{main.tex} as required
+        \item Update the files in the \texttt{content/} directory
+        \item Add or delete chapters according to your thesis needs
+        \item To remove this README, comment out the line below in \texttt{main.tex}
+        \vspace*{-1.1em}\begin{verbatim}
+\include{template/readme}
+        \end{verbatim}
+    \end{enumerate}
+    
+    \noindent Wishing you the very best of luck.
+
+    \vspace{.69em}
+
+    \noindent Stay curious,\\
+    \textit{Viktor}
+
+    \newpage
+    \thispagestyle{empty}
+    \vspace*{8em}
+    \begin{quote}
+        \centering
+        \textit{You look lovely today!}\\
+    \end{quote}
+}
+
+\clearpage % End the content with custom margins
+\restoregeometry % Revert to the original margins
